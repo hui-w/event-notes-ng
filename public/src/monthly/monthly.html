@@ -1,0 +1,29 @@
+<div class="header-toolbar">
+    <a href="#/" class="tool-button tool-button-small">List View</a>
+    <a href="#/add/" class="tool-button tool-button-small">Add</a>
+</div>
+<div class="monthly-view clearfix no-select">
+    <div class="year-list">
+        <div class="year-item" ng-repeat="year in yearList" ng-class="{'selected': year == expandedYear}" ng-click="expandYear(year)">{{year}}</div>
+        <span ng-click="goToMonth(-1, -1)" class="this-month-button" ng-if="!isThisMonth()">This Month</span>
+    </div>
+    <div class="month-list clearfix no-select" ng-show="expandedYear != -1">
+        <div class="month-item" ng-repeat="monthInfo in monthList" ng-show="expandedYear == monthInfo.year" ng-click="goToMonth(monthInfo.year, monthInfo.month)">{{monthInfo.month | shortmonth}}({{monthInfo.count}})</div>
+    </div>
+    <div class="year-month-nav">
+        <div class="month-navi-button previous-month" ng-click="changeMonth(-1)">&lt;&lt; Prev</div>
+        <div class="current-month">
+            {{selectedMonth | month}}, {{selectedYear}}
+        </div>
+        <div class="month-navi-button next-month" ng-click="changeMonth(1)">Next &gt;&gt;</div>
+    </div>
+    <div class="calendar">
+        <div calendar-month year="selectedYear" month="selectedMonth" date="selectedDate" events="eventList"></div>
+    </div>
+    <div class="list">
+        <div class="monthly-header">{{eventList.length}} Event(s)</div>
+        <div class="monthly-item clearfix" ng-repeat="event in eventList" ng-if="selectedDate == 0 || selectedDate == event.date">
+            <daily-events year="event.year" month="event.month" date="event.date" events="[event]"></daily-events>
+        </div>
+    </div>
+</div>

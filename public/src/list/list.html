@@ -1,0 +1,23 @@
+<div class="header-toolbar">
+    <select class="year-select" ng-model="selectedYear" ng-change="changeYear(selectedYear)">
+        <option ng-repeat="year in yearList">{{year}}</option>
+    </select>
+    <a href="#/monthly/" class="tool-button tool-button-small">Calendar</a>
+    <a href="#/add/" class="tool-button tool-button-small">Add</a>
+    <!--
+    <a href="javascript:void(0);" class="tool-button tool-button-small" ng-click="importDummy()">Import</a>
+    <a href="javascript:void(0);" class="tool-button tool-button-small" ng-click="clear()">Clear</a>
+    -->
+</div>
+<div class="list-view">
+    <div ng-repeat="monthData in hierarchyData" class="month-box">
+        <div class="month-title">
+            {{ monthData.month | month }}, {{ monthData.year }}
+        </div>
+        <div class="date-list">
+            <div ng-repeat="dailyData in monthData.dates">
+                <daily-events year="monthData.year" month="monthData.month" date="dailyData.date" events="dailyData.events"></daily-events>
+            </div>
+        </div>
+    </div>
+</div>

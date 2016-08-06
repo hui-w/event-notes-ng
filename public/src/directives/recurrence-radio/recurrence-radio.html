@@ -1,0 +1,5 @@
+<div class="recurrence-radio">
+    <div class="recurrence-item-wrapper" ng-repeat="type in recurrenceTypes">
+        <div class="recurrence-radio-item" ng-class="{'recurrence-radio-selected' : $index == recurrenceIndex}" ng-click="setRecurrence($index)">{{type}}</div>
+    </div>
+</div>

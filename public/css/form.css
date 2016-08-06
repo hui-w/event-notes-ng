@@ -1,0 +1,39 @@
+.form-view {
+    padding: 20px 0px 0px 0px;
+}
+
+.form-view .form-row {
+    padding: 0px 10px 20px 10px;
+}
+
+.form-view .form-row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.form-view .form-row .field-label {
+    /*
+    width: 90px;
+    text-align: right;
+    float: left;
+    */
+    padding: 4px 0px;
+}
+
+.form-view .form-row .field-control {
+    /*
+    margin-left: 90px;
+    padding: 0px 0px 0px 10px;
+    */
+}
+
+.form-view .has-error .field-label {
+    color: red;
+}
+
+.form-view .form-row .help-block {
+    color: #259B23;
+}

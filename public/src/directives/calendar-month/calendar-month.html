@@ -1,0 +1,17 @@
+<div class="calendar-month">
+    <table style="width: 100%;">
+        <tr>
+            <th ng-repeat="weekday in data.weekdays" ng-class="{true: 'header-weekend', false: 'header-weekday'}[$index == 6 || $index == 0]">{{weekday}}</th>
+        </tr>
+        <tr ng-repeat="week in data.weeks">
+            <td ng-repeat="dateInfo in week track by $index" ng-class="{true: 'cell-weekend', false: 'cell-weekday'}[$index == 6 || $index == 0]">
+                <div ng-if="dateInfo.number > 0" class="date-info" ng-class="{'date-info-selected': dateInfo.number == date}" ng-click="gotoDate(dateInfo.number)">
+                    <div class="cell-date">{{dateInfo.number}}</div>
+                    <div class="cell-pins clearfix">
+                        <div class="cell-pin" ng-repeat="event in dateInfo.events" title="{{event.text}}" style="background-color: {{event.flag | flagColor}}"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

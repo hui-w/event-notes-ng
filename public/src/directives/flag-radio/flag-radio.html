@@ -1,0 +1,5 @@
+<div class="flag-radio">
+    <div class="flag-item-wrapper" ng-repeat="color in colors">
+        <div class="flag-radio-item" ng-style="getStyle($index, color)" ng-class="{'flag-radio-selected' : $index == flagIndex}" ng-click="setFlag($index)"></div>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif;
+    width: 100%;
+    min-width: 320px;
+}
+
+.no-select {
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header {
+    background-color: #404040;
+    color: #fff;
+    padding: 0px 10px;
+    line-height: 48px;
+    font-size: 120%;
+}
+
+.header .title {
+    font-weight: bold;
+}
+
+.header-toolbar {
+    float: right;
+    padding: 0px 10px;
+    line-height: 48px;
+    margin: -50px 0px 0px 0px;
+}
+
+a.tool-button {
+    padding: 4px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #4686B0;
+    background-color: #E4E3E8;
+    border-radius: 5px;
+}
+
+a.tool-button-small {
+    font-size: 80%;
+}
+
+.main {
+    clear: both;
+}
+
+.footer {
+    background-color: #404040;
+    color: #fff;
+    padding: 0px 10px;
+    line-height: 48px;
+    border-top: 1px solid #F1F0F5;
+}
+
+.footer .copyright {
+    font-size: 80%;
+}
+
+.loading-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+
+/**
+ * Lines
+ */
+
+@-webkit-keyframes line-scale {
+    0% {
+        -webkit-transform: scaley(1);
+        transform: scaley(1);
+    }
+    50% {
+        -webkit-transform: scaley(0.4);
+        transform: scaley(0.4);
+    }
+    100% {
+        -webkit-transform: scaley(1);
+        transform: scaley(1);
+    }
+}
+
+@keyframes line-scale {
+    0% {
+        -webkit-transform: scaley(1);
+        transform: scaley(1);
+    }
+    50% {
+        -webkit-transform: scaley(0.4);
+        transform: scaley(0.4);
+    }
+    100% {
+        -webkit-transform: scaley(1);
+        transform: scaley(1);
+    }
+}
+
+.line-scale > div:nth-child(1) {
+    -webkit-animation: line-scale 1s 0.1s infinite cubic-bezier(.2, .68, .18, 1.08);
+    animation: line-scale 1s 0.1s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+
+.line-scale > div:nth-child(2) {
+    -webkit-animation: line-scale 1s 0.2s infinite cubic-bezier(.2, .68, .18, 1.08);
+    animation: line-scale 1s 0.2s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+
+.line-scale > div:nth-child(3) {
+    -webkit-animation: line-scale 1s 0.3s infinite cubic-bezier(.2, .68, .18, 1.08);
+    animation: line-scale 1s 0.3s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+
+.line-scale > div:nth-child(4) {
+    -webkit-animation: line-scale 1s 0.4s infinite cubic-bezier(.2, .68, .18, 1.08);
+    animation: line-scale 1s 0.4s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+
+.line-scale > div:nth-child(5) {
+    -webkit-animation: line-scale 1s 0.5s infinite cubic-bezier(.2, .68, .18, 1.08);
+    animation: line-scale 1s 0.5s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+
+.line-scale > div {
+    background-color: #fff;
+    width: 4px;
+    height: 35px;
+    border-radius: 2px;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+}
+
+.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}

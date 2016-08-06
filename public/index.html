@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="eventsApp">
+
+<head>
+    <title>Events App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="./lib/bootstrap.min.css" rel="stylesheet" />
+    <script src="./lib/angular.min.js"></script>
+    <script src="./lib/angular-route.min.js"></script>
+    <script src="./lib/angular-resource.min.js"></script>
+    <script src="./lib/jquery-2.1.1.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./lib/ui-bootstrap-tpls-0.13.3.min.js"></script>
+    <script src="./lib/ie10-viewport-bug-workaround.js"></script>
+    <script src="./lib/moment.min.js"></script>
+    <script src="./config/global.js"></script>
+    <!-- build:css -->
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/list.css" rel="stylesheet" />
+    <link href="./css/form.css" rel="stylesheet" />
+    <link href="./css/monthly.css" rel="stylesheet" />
+    <link href="./css/mortgage.css" rel="stylesheet" />
+    <link href="./css/directives.css" rel="stylesheet" />
+    <!-- endbuild -->
+</head>
+
+<body ng-controller="baseCtrl">
+    <div class="header">
+        <div class="title">
+            Events
+        </div>
+    </div>
+    <div class="main">
+        <div ng-view></div>
+    </div>
+    <div class="footer">
+        <div class="copyright">
+            &copy; QLike.com
+        </div>
+    </div>
+    <event-modal item="$root.selectedItem" on-deleted="eventDeleted(id)" ng-if="$root.selectedItem != null"></event-modal>
+    <div class="loading-modal" ng-if="loading">
+        <div class="loading">
+            <div class="loader-inner line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- build:js -->
+    <script src="./config/global.js"></script>
+    <script src="./src/common.js"></script>
+    <script src="./src/hashtable.js"></script>
+    <!-- Modules -->
+    <script src="src/app.js"></script>
+    <!-- Controllers -->
+    <script src="src/list/list-ctrl.js"></script>
+    <script src="src/form/form-ctrl.js"></script>
+    <script src="src/monthly/monthly-ctrl.js"></script>
+    <script src="src/mortgage/mortgage-ctrl.js"></script>
+    <!-- Services -->
+    <script src="src/services.js"></script>
+    <!-- Filters -->
+    <script src="src/filters.js"></script>
+    <!-- Directives -->
+    <script src="src/directives/event-modal/event-modal.js"></script>
+    <script src="src/directives/flag-radio/flag-radio.js"></script>
+    <script src="src/directives/flag-label/flag-label.js"></script>
+    <script src="src/directives/recurrence-radio/recurrence-radio.js"></script>
+    <script src="src/directives/tag-label/tag-label.js"></script>
+    <script src="src/directives/recurrence-label/recurrence-label.js"></script>
+    <script src="src/directives/drop-down-list/drop-down-list.js"></script>
+    <script src="src/directives/tag-list/tag-list.js"></script>
+    <script src="src/directives/calendar-month/calendar-month.js"></script>
+    <script src="src/directives/daily-events/daily-events.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

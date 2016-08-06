@@ -1,0 +1,123 @@
+<div class="header-toolbar">
+    <a href="#/" class="tool-button tool-button-small">Back to Events</a>
+</div>
+<div class="mortgage-view clearfix no-select">
+    <h1>Fixed-Payment Mortgage</h1>
+    <form name="mortgageForm" ng-submit="calculate(eventForm.$valid)" novalidate>
+        <div class="form-row">
+            <div class="field-label">Principal</div>
+            <div class="field-control">
+                <input name="principal" type="number" class="form-control" style="width: 140px" ng-required="true" ng-model="principal" />
+                <span class="help-block" ng-show="mortgageForm.principal.$invalid">
+                * Principal is required
+            </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Annual Rate</div>
+            <div class="field-control">
+                <input name="annualRate" type="number" class="form-control" style="width: 100px" ng-required="true" ng-model="annualRate" />
+                <span class="help-block" ng-show="mortgageForm.annualRate.$invalid">
+	                * Annual rate is required
+	            </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Period (Month)</div>
+            <div class="field-control">
+                <input name="period" type="number" class="form-control" style="width: 100px" ng-required="true" ng-model="period" />
+                <span class="help-block" ng-show="mortgageForm.period.$invalid">
+	                * Period is required
+	            </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Reinvest Rate</div>
+            <div class="field-control">
+                <input name="reinvestRate" type="number" class="form-control" style="width: 100px" ng-required="true" ng-model="reinvestRate" />
+                <span class="help-block" ng-show="mortgageForm.reinvestRate.$invalid">
+	                * Reinvest rate is required
+	            </span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label"> </div>
+            <div class="field-control">
+                <button type="submit" class="btn" ng-disabled="mortgageForm.$invalid">Calculate</button>
+            </div>
+        </div>
+    </form>
+    <div class="output" ng-show="payment.months.length > 0">
+        <p class="result-cate">Fixed-Payment Mortgage</p>
+        <ul>
+            <li>
+                <span class="result-key">Monthly Payment:</span>
+                <span class="result-value">{{payment.fixedPayment.monthlyPayment.toFixed(2)}}</span>
+            </li>
+            <li>
+                <span class="result-key">Total Interest:</span>
+                <span class="result-value">{{payment.fixedPayment.totalInterest.toFixed(2)}}</span>
+            </li>
+            <li>
+                <span class="result-key">Actual Annual Rate:</span>
+                <span class="result-value">{{(payment.fixedPayment.actualRate*100).toFixed(2)}}%</span>
+            </li>
+        </ul>
+        <p class="result-cate">Monthly Reivestment</p>
+        <ul>
+            <li>
+                <span class="result-key">Total Earning:</span>
+                <span class="result-value">{{payment.reinvestment.totalInterest.toFixed(2)}}</span>
+            </li>
+        </ul>
+        <p class="result-cate">Summarize</p>
+        <ul>
+            <li>
+                <span class="result-key">Total Earning:</span>
+                <span class="result-value">{{payment.summarize.totalInterest.toFixed(2)}}</span>
+            </li>
+            <li>
+                <span class="result-key">Actual Annual Rate:</span>
+                <span class="result-value">{{(payment.summarize.actualRate * 100).toFixed(2)}}%</span>
+            </li>
+        </ul>
+        <table class="result-grid">
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    Principal</th>
+                <th>
+                    Interest
+                </th>
+                <th>
+                    Balance
+                </th>
+                <th>
+                    RE*
+                </th>
+            </tr>
+            <tr ng-repeat="month in payment.months">
+                <td>
+                    {{$index + 1}}
+                </td>
+                <td>
+                    {{month.principal.toFixed(2)}}
+                </td>
+                <td>
+                    {{month.interest.toFixed(2)}}
+                </td>
+                <td>
+                    {{month.balance.toFixed(2)}}
+                </td>
+                <td>
+                    {{month.reinvestEarning.toFixed(2)}}
+                </td>
+            </tr>
+        </table>
+        <p>
+            (*) Reinvestment Earning : Monthly reinvest the returned principal and interest till the  period ending
+        </p>
+    </div>
+</div>

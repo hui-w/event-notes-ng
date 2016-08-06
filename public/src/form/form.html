@@ -1,0 +1,54 @@
+<div class="header-toolbar">
+    <a href="#/" class="tool-button tool-button-small" ng-if="$root.backPath == null">Events List</a>
+    <a href="javascript: void(0);" class="tool-button tool-button-small" ng-if="$root.backPath != null" ng-click="historyBack()">Back</a>
+</div>
+<div class="form-view">
+    <form name="eventForm" ng-submit="saveEvent(eventForm.$valid)" novalidate>
+        <div class="form-row">
+            <p class="input-group" style="width: 288px;">
+                <input type="text" readonly="readonly" class="form-control" datepicker-popup="{{dpOptions.formats[0]}}" ng-model="dpDate" is-open="dpOptions.opened" min-date="null" max-date="'2020-06-22'" datepicker-options="dpOptions.options" date-disabled="dpOptions.disabled(date, mode)" ng-required="true" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="dpOptions.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-row" ng-class="{'has-error':(!eventForm.text.$pristine&&eventForm.text.$invalid)}">
+            <textarea class="form-control" style="width: 288px; height: 60px" ng-model="event.text" name="text" required placeholder="Text Contents"></textarea>
+            <div class="help-block" ng-show="eventForm.text.$invalid">
+                * Text contents is required
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Number</div>
+            <div class="field-control">
+                <input type="number" class="form-control" style="width: 100px" ng-model="event.number" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Tag</div>
+            <div class="field-control">
+                <input type="text" class="form-control" style="width: 100px" ng-model="event.tag" />
+                <div tag-list tag-selected="tagSelected(tag)"></div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Flag</div>
+            <div class="field-control">
+                <div flag-radio flag-index="event.flag"></div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label">Recurrence</div>
+            <div class="field-control">
+                <div recurrence-radio recurrence-index="event.recurrence"></div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-label"> </div>
+            <div class="field-control">
+                <button type="submit" class="btn" ng-disabled="eventForm.$invalid">{{operationTitle}}</button>
+                <button type="button" class="btn" ng-click="resetForm()">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>

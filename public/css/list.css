@@ -1,0 +1,26 @@
+.list-view {}
+
+.year-select {
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0px 10px 0px 0px;
+    background-color: #404040;
+    color: #fff;
+}
+
+.list-view .month-box {
+    color: #535352;
+    background-color: #F1F0F5;
+}
+
+.list-view .month-box .month-title {
+    background-color: #E4E3E8;
+    padding: 0px 10px;
+    line-height: 48px;
+    font-weight: bold;
+}
+
+.list-view .month-box .date-list {
+    padding: 0px 10px 20px 10px;
+}

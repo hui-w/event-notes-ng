@@ -1,0 +1,96 @@
+.mortgage-view {
+    padding: 0px 10px 0px 10px;
+}
+
+.mortgage-view h1 {
+    font-size: 140%;
+    border-bottom: 1px dashed #ccc;
+    margin: 0px 0px 20px 0px;
+    padding: 20px 0px;
+}
+
+.mortgage-view .form-row {
+    padding: 0px 10px 20px 10px;
+}
+
+.mortgage-view .form-row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.mortgage-view .form-row .field-label {
+    width: 120px;
+    text-align: right;
+    float: left;
+    line-height: 30px;
+}
+
+.mortgage-view .form-row .field-control {
+    margin-left: 120px;
+    padding: 0px 0px 0px 10px;
+}
+
+.mortgage-view .has-error .field-label {
+    color: red;
+}
+
+.mortgage-view .form-row .help-block {
+    color: #259B23;
+}
+
+.mortgage-view .output{
+    border: 1px dashed #ccc;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px;
+}
+
+.mortgage-view .output .result-key{
+    font-size: 120%;
+}
+
+.mortgage-view .output .result-value{
+    font-size: 120%;
+    color: #f00;
+}
+
+.mortgage-view p.result-cate{
+    font-weight: bold;
+}
+
+.mortgage-view ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mortgage-view li{
+    list-style-type: none;
+    margin: 10px 20px;
+    padding: 0px;
+}
+
+table.result-grid {
+    border-left: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.result-grid td,
+.result-grid th {
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    line-height: 24px;
+}
+
+.result-grid th {
+    background-color: #eee;
+    padding: 4px;
+}
+
+.result-grid td {
+    padding: 4px;
+}

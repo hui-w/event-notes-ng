@@ -1,0 +1,27 @@
+<div class="date-box">
+    <div class="date-title">
+        <div class="date">{{ date }}</div>
+        <div class="weekday">{{ getWeekday(year, month, date) }}</div>
+    </div>
+    <div class="event-list">
+        <div ng-repeat="event in events" class="event" ng-click="viewEvent(year, month, date, event)">
+            <div style="height: 24px;">
+                <span flag-label flag-index="event.flag"></span>
+                <div class="event-text">
+                    {{ event.text }}
+                </div>
+                <div class="event-number" ng-if="event.number != 0">{{ event.number }}</div>
+            </div>
+            <div style="height: 24px;">
+                <div class="event-subline">
+                    <span class="value">{{ event.timestamp | datetime }}</span>
+                    <span tag-label tag="event.tag"></span>
+                    <span recurrence-label recurrence="event.recurrence"></span>
+                </div>
+                <div class="event-tool">
+                    <!--No more button in the list-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

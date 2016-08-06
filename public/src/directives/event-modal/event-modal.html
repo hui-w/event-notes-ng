@@ -1,0 +1,21 @@
+<div id="event-modal" class="event-modal event-modal-focus">
+    <div>
+        <a href="javascript:void(0);" title="Close" class="close-button" ng-click="close()">X</a>
+        <h2 class="date">{{ item.month | month }} {{ item.date }}, {{ item.year }}</h2>
+        <p>
+            <span flag-label flag-index="item.event.flag"></span>
+            <span class="text">{{ item.event.text }}</span>
+        </p>
+        <p class="number" ng-if="item.event.number != 0">{{ item.event.number }}</p>
+        <p class="subline">
+            <span class="key">Modified at: </span>
+            <span class="value">{{ item.event.timestamp | datetime }}</span>
+            <span tag-label tag="item.event.tag"></span>
+            <span recurrence-label recurrence="item.event.recurrence"></span>
+        </p>
+        <p class="buttons">
+            <a href="javascript:void(0);" class="tool-button tool-button-small" ng-click="editEvent(item.event.id)">Edit</a>
+            <a href="javascript:void(0);" class="tool-button tool-button-small" ng-click="deleteEvent(item.event.id, $event)">Delete</a>
+        </p>
+    </div>
+</div>

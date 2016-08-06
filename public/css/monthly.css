@@ -1,0 +1,92 @@
+.monthly-view {}
+
+.monthly-view .year-list {
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px;
+}
+
+.monthly-view .year-list .year-item {
+    float: left;
+    margin: 0px 10px 0px 0px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.monthly-view .year-list .selected {
+    font-weight: bold;
+}
+
+.monthly-view .month-list {
+    line-height: 32px;
+    padding: 0px 10px;
+    position: absolute;
+    background-color: #E4E3E8;
+    border: 1px solid #000;
+    color: #4686B1;
+    border-radius: 4px;
+    margin: 0px 10px;
+}
+
+.monthly-view .month-list .month-item {
+    float: left;
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.monthly-view .year-list .this-month-button {
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+}
+
+.monthly-view .year-month-nav {
+    line-height: 32px;
+    padding: 0px 10px;
+    text-align: center;
+}
+
+.monthly-view .year-month-nav .previous-month {
+    float: left;
+}
+
+.monthly-view .year-month-nav .current-month {
+    display: inline;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.monthly-view .year-month-nav .next-month {
+    float: right;
+}
+
+.monthly-view .year-month-nav .month-navi-button {
+    cursor: pointer;
+    color: #4686B0;
+    background-color: #E4E3E8;
+    border-radius: 5px;
+    padding: 0px 16px;
+    margin: 4px 0px;
+    line-height: 24px;
+}
+
+.monthly-view .calendar {
+    padding: 0px 10px;
+    margin: 0px 0px 10px 0px;
+}
+
+.monthly-view .list {
+    padding: 0px 5px;
+    margin: 0px 0px 10px 0px;
+}
+
+.monthly-view .list .monthly-header {
+    padding: 5px 5px;
+    background-color: #AAA;
+    border-radius: 4px;
+}
+
+.monthly-view .list .monthly-item {
+    padding: 0px 5px 5px 0px;
+    border-bottom: 1px dashed #ccc;
+}
