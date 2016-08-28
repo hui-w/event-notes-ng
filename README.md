@@ -1,4 +1,4 @@
-# event-notes-ng
+# Event Notes (AngularJS)
 The web app for keeping event notes which is build with AngularJS
 
 ## Demo
